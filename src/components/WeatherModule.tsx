@@ -26,12 +26,6 @@ export const WeatherModule = () => {
     setError('');
     
     try {
-      const { data: weatherData, error: weatherError } = await supabase.functions.invoke('weather', {
-        body: {},
-        method: 'GET',
-      });
-
-      // Build the URL with query parameters
       const url = new URL(
         `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/weather`
       );
